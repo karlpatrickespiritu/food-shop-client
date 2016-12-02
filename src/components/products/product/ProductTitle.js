@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CardTitle } from 'material-ui/Card';
 
-class ProductTitle extends Component {
+class ProductTitle extends React.Component {
   render() {
     return (
-      <CardTitle title="Card title" subtitle="Card subtitle" />
+      <CardTitle title={this.props.title} subtitle={this.props.subtitle} />
     )
   }
 }

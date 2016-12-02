@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { CardTitle, CardMedia } from 'material-ui/Card';
+import React from 'react'
+import { CardMedia } from 'material-ui/Card';
 
-class ProductImage extends Component {
+class ProductImage extends React.Component {
   render() {
     return (
-      <CardMedia overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}>
-        <img src="images/img1.jpg" alt="" />
+      <CardMedia>
+        <img src={this.props.src} alt="" />
       </CardMedia>
     )
   }

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
-class ProductActions extends Component {
+class ProductActions extends React.Component {
   render() {
     return (
       <CardActions>
