@@ -7,9 +7,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Food Shop</h1>
         <MuiThemeProvider>
-          {this.props.children}
+          <div>
+            <Header/>
+            {this.props.children}
+          </div>
         </MuiThemeProvider>
       </div>
     )
