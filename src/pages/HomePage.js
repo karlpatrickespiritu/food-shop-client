@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import Products from '../../components/products/Products'
-import Header from '../partials/header/Header'
+import { Link } from 'react-router'
+// import Products from '../components/products/Products'
 
 class HomePage extends Component {
   render() {
     return (
       <div>
-        <Header/>
         <h1>HomePage</h1>
-        <Products/>
+        <Link to="/products">products</Link>
+        {this.props.children}
       </div>
     )
   }

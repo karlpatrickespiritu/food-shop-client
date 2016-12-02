@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import HomePage from './pages/home-page/HomePage'
+// import routes from './routes'
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider>
-        <HomePage/>
-      </MuiThemeProvider>
-    );
+      <div>
+        <h1>Food Shop</h1>
+        <MuiThemeProvider>
+          {this.props.children}
+        </MuiThemeProvider>
+      </div>
+    )
   }
 }
 
