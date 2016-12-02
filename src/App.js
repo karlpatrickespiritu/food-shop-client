@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-// import routes from './routes'
+
+import Header from './components/shared/Header'
 
 class App extends Component {
   render() {

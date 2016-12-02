@@ -1,12 +1,14 @@
 import React from 'react'
 import { Card } from 'material-ui/Card'
 
+import { 
+  ProductSellerAvatar,
+  ProductImage,
+  ProductDescription,
+  ProductTitle,
+  ProductActions
+} from './'
 import './Product.css'
-import ProductSellerAvatar from './ProductSellerAvatar'
-import ProductImage from './ProductImage'
-import ProductDescription from './ProductDescription'
-import ProductTitle from './ProductTitle'
-import ProductActions from './ProductActions'
 
 class Product extends React.Component {
   render() {
