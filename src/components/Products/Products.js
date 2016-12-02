@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import Product from './Product/Product'
+import Product from './product/Product'
+import './Products.css'
 
 class Products extends Component {
   render() {
     return (
       <div>
-        <Product/>
+        <Product className=""/>
         <Product/>
         <Product/>
       </div>

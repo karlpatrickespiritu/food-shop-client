@@ -1,6 +1,6 @@
-import  React, { Component } from 'react'
-import Products from '../../components/Products/Products'
-import Header from '../partials/Header/Header'
+import React, { Component } from 'react'
+import Products from '../../components/products/Products'
+import Header from '../partials/header/Header'
 
 class HomePage extends Component {
   render() {
