@@ -8,7 +8,6 @@ class HomePage extends Component {
       <div>
         <h1>HomePage</h1>
         <Link to="/products">products</Link>
-        {this.props.children}
       </div>
     )
   }
