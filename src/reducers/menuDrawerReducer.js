@@ -1,15 +1,15 @@
-const initialState = {}
+let initialState = {
+  is_opened: false
+}
 
 function menuDrawerReducer(state = initialState, action) {
-  console.log('menuDrawerReducer', state)
-  
-  // switch (action) {
-  //   case 'TYPE': 
-  //     break;
-  //   default: break;
-  // }
-
-  return state
+  switch (action.type) {
+    case 'OPEN_MENU':
+      return { ...state, is_opened: true }
+    case 'CLOSE_MENU':
+      return { ...state, is_opened: false }
+    default: return state
+  }
 }
 
 export default menuDrawerReducer

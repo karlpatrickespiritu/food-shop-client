@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import AppBar from 'material-ui/AppBar';
-import muiThemeable from 'material-ui/styles/muiThemeable';
+import AppBar from 'material-ui/AppBar'
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
 class Header extends Component {
   render() {
@@ -10,4 +10,4 @@ class Header extends Component {
   }
 }
 
-export default muiThemeable()(Header);
+export default muiThemeable()(Header)

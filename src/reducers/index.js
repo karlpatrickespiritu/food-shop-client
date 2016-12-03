@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import menuDrawerReducer from './menuDrawerReducer'
+import menu from './menuDrawerReducer'
 
 export default combineReducers({
-  menuDrawerReducer
+  menu
 })
