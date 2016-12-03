@@ -1,11 +1,11 @@
-export function openMenu() {
+export function openMenuDrawer() {
   return {
     type: 'OPEN_MENU',
     payload: {}
   }
 }
 
-export function closeMenu() {
+export function closeMenuDrawer() {
   return {
     type: 'CLOSE_MENU',
     payload: {}

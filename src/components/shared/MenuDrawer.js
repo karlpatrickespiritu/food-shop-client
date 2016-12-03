@@ -2,48 +2,34 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-import RaisedButton from 'material-ui/RaisedButton'
 
-import { openMenu, closeMenu } from '../../actions/menuDrawerActions'
+import { openMenuDrawer, closeMenuDrawer } from '../../actions/menuDrawerActions'
 
 class MenuDrawer extends React.Component {
 
-  componentWillMount() {
-    console.log(this.props)
-    // this.props.dispatch(openMenu())
+  closeMenuDrawer() {
+    this.props.dispatch(closeMenuDrawer())
   }
 
-  handleToggle() {
-    this.setIsOpen(this.props.menu.is_open)
+  openMenuDrawer() {
+    this.props.dispatch(openMenuDrawer())
   }
 
-  handleClose() {
-    this.props.dispatch('CLOSE_MENU')
-  }
-
-  setIsOpen(open = true) {
-    if (open) return this.props.dispatch(openMenu())
-    return this.props.dispatch(closeMenu())
+  setMenuIsOpen(open = true) {
+    if (open) return this.openMenuDrawer()
+    return this.closeMenuDrawer()
   }
 
   render() {
+    const { menu } = this.props
+    const menuList = menu.options.map((option) => {
+      return <MenuItem key={option.id} onTouchTap={this.closeMenuDrawer.bind(this)}>{option.title}</MenuItem>
+    })
+
     return (
-      <div>
-        <p>{this.props.menu.is_open}</p>
-        <RaisedButton
-          label="Open Drawer"
-          onTouchTap={this.handleToggle.bind(this)}
-        />
-        <Drawer
-          docked={false}
-          width={200}
-          open={this.props.menu.is_open}
-          onRequestChange={(open) => this.setIsOpen(open)}
-        >
-          <MenuItem onTouchTap={this.handleClose.bind(this)}>Menu Item</MenuItem>
-          <MenuItem onTouchTap={this.handleClose.bind(this)}>Menu Item 2</MenuItem>
-        </Drawer>
-      </div>
+      <Drawer docked={false} width={200} open={menu.is_opened} onRequestChange={(open) => this.setMenuIsOpen(open)}>
+        {menuList}
+      </Drawer>
     );
   }
 }
