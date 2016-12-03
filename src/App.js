@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import { Provider } from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import Header from './components/shared/Header'
 import MenuDrawer from './components/shared/MenuDrawer'
+import store from './store'
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Provider store={store}>
         <MuiThemeProvider>
           <div>
             <MenuDrawer/>
@@ -15,7 +17,7 @@ class App extends Component {
             {this.props.children}
           </div>
         </MuiThemeProvider>
-      </div>
+      </Provider>
     )
   }
 }
