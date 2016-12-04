@@ -1,4 +1,5 @@
 import React from 'react'
+import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
@@ -20,10 +21,15 @@ class MenuDrawer extends React.Component {
     return this.closeMenuDrawer()
   }
 
+  goToLink(link) {
+    browserHistory.push(link)
+    this.closeMenuDrawer()
+  }
+
   render() {
     const { menu } = this.props
     const menuList = menu.options.map((option) => {
-      return <MenuItem key={option.id} onTouchTap={this.closeMenuDrawer.bind(this)}>{option.title}</MenuItem>
+      return <MenuItem key={option.id} onTouchTap={this.goToLink.bind(this, option.link)}>{option.title}</MenuItem>
     })
 
     return (

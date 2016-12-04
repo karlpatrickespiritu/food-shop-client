@@ -1,13 +1,13 @@
 let initialState = {
   is_opened: false,
   options: [
-    { id: 1, title: 'Home' },
-    { id: 2, title: 'Products' },
-    { id: 3, title: 'About' },
+    { id: 1, title: 'Home', link: '/' },
+    { id: 2, title: 'Products', link: '/products' },
+    { id: 3, title: 'About', link: '/about' },
   ]
 }
 
-function menuDrawerReducer(state = initialState, action) {
+const menuDrawerReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'OPEN_MENU':
       return { ...state, is_opened: true }
